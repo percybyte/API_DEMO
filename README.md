@@ -26,7 +26,7 @@ API para gestionar clientes mediante operaciones CRUD.
   ```json
   {
     "name": "Nuevo Nombre",
-    "prone": "987654321"
+    "phone": "987654321"
   }
   ```
 
