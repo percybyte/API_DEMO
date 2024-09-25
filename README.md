@@ -33,4 +33,4 @@ API para gestionar clientes mediante operaciones CRUD.
 ## 4. ✏️ Eliminar un Cliente
 
 - **Método**: `DELETE /api/v1/clients/{id}`
-- **Descripción**: Cambia el estado del cliente a inactivo.
+- **Descripción**: Elimina a un cliente de la base de datos

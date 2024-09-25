@@ -42,7 +42,7 @@ const getClients = async (req, res, next) => {
     if (clients.length === 0) {
       return res.status(404).json({
         status: 'success',
-        message: 'No clients found with the provided email.',
+        message: 'No clients found.',
       });
     }
 

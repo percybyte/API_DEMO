@@ -30,7 +30,7 @@ class ClientService {
   async find(queryParams = {}) {
     try {
       const { email } = queryParams;
-      let query = Client.find().where({ isActive: true });
+      let query = Client.find();
 
       if (email) query = query.where({ email });
 
@@ -88,14 +88,11 @@ class ClientService {
       const client = await this.findOne(id);
       if (!client) throw Boom.notFound('Client not found');
 
-      const clientDeleted = await Client.findByIdAndUpdate(
-        id,
-        {
-          isActive: false,
-        },
-        { new: true },
-      );
-      return clientDeleted;
+      await Client.findByIdAndDelete(id);
+      return {
+        status: 'success',
+        message: 'Client deleted successfully.',
+      };
     } catch (error) {
       if (error.isBoom) throw error;
       throw Boom.badImplementation('Error deleting the client', {

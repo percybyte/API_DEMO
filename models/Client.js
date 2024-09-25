@@ -26,10 +26,6 @@ const ClientSchema = Schema({
     type: String,
     trim: true,
   },
-  isActive: {
-    type: Boolean,
-    default: true,
-  },
 });
 
 ClientSchema.methods.toJSON = function () {
